@@ -9,6 +9,8 @@ const input = document.querySelector("input");
 createBtn.addEventListener("click", createBoxes);
 destroyBtn.addEventListener("click", destroyBoxes);
 
+let sidesSizes = 20; /*Вынесли из функции чтобы дивы добавлялись при каждом нажатии*/
+
 function createBoxes() {
   const numberArray = [];
   for (let i = 1; i <= input.value; i += 1) {
@@ -16,9 +18,10 @@ function createBoxes() {
   }
 
   const boxes = numberArray.map((number) => {
+    sidesSizes += 10;
     const createBox = document.createElement("div");
-    createBox.style.width = `${20 + number * 10}px`;
-    createBox.style.height = `${20 + number * 10}px`;
+    createBox.style.width = sidesSizes + "px";
+    createBox.style.height = sidesSizes + "px";
     createBox.style.backgroundColor = getRandomHexColor();
 
     return createBox;
