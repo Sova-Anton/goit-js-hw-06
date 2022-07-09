@@ -1,6 +1,3 @@
-/* Не знаю как сделать чтобы при повторном клике дивы создавались не со 
-стартовых размеров... */
-
 const createBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
 const boxesDiv = document.querySelector("#boxes");
@@ -33,6 +30,7 @@ function createBoxes() {
 function destroyBoxes() {
   boxesDiv.innerHTML = "";
   input.value = "";
+  sidesSizes = 20; /* чтобы после обнуления сбросились размеры дивов */
 }
 
 function getRandomHexColor() {
